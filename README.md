@@ -1,6 +1,6 @@
 # TUP-SPACENOVA
 ## Tópico:
-**Tópico elegido:** [Espacio Exterior]
+**Tópico elegido:** Espacio Exterior
 
 
 ## Miembros del Proyecto
