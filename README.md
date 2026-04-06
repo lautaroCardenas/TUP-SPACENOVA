@@ -4,7 +4,7 @@
 
 
 ## Miembros del Proyecto
-* **Cardenas, Lautaro** * **Reynoso, Maitee**
+* **Cardenas, Lautaro**  **Reynoso, Maitee**
 
 ## Gestión del Proyecto
 * **Aplicación de gestión elegida:** Trello
