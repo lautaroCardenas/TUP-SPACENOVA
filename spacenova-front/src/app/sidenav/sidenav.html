@@ -1,0 +1,23 @@
+<button (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+
+</button>
+
+
+<mat-sidenav-container class="sidenav-conteiner">
+  <mat-sidenav mode="side" opened="{{openmenu}}">
+    <mat-nav-list>
+        @for (item of menuItems; track item.text) {
+            <a mat-list-item >
+                <mat-icon>{{ item.icon }}</mat-icon>
+                <span>{{ item.text }}</span>
+            </a>
+        }
+    </mat-nav-list>
+    </mat-sidenav>
+  <mat-sidenav-content>
+        <ng-content>
+    
+        </ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
