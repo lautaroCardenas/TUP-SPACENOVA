@@ -6,6 +6,9 @@
   --accent-color: #6453ff;
   --text-color: #fdfdfa;
   --button-alert-color: #ba0621;
+
+  --title-font: 'Manrope Semibold';
+  --text-font: 'Manrope';
 }
 
 *{
@@ -18,4 +21,16 @@ body {
     font-size: 1vw;
     background-color: var(--primary-color);
     color: var(--text-color);
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Manrope Semibold';
+    src: url('./assets/fonts/Manrope-SemiBold.ttf');
+    font-weight: 600;
 }
