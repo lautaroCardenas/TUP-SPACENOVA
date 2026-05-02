@@ -25,12 +25,12 @@ body {
 
 @font-face {
     font-family: 'Manrope';
-    src: url('./assets/fonts/Manrope-Regular.ttf');
+    src: url('/assets/fonts/Manrope-Regular.ttf');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Manrope Semibold';
-    src: url('./assets/fonts/Manrope-SemiBold.ttf');
+    src: url('/assets/fonts/Manrope-SemiBold.ttf');
     font-weight: 600;
 }

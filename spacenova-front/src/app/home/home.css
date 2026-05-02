@@ -5,3 +5,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.home img {
+    width: 20rem;
+    height: auto;
+
+}

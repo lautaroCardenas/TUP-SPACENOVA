@@ -36,3 +36,14 @@
     background-color: var(--accent-color);
     color: var(--text-color) !important;
 }
+
+.login-img img {
+    width: 100vh;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.login-brand img {
+    width: 5rem;
+    height: auto;
+}
