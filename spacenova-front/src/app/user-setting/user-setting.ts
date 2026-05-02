@@ -16,10 +16,16 @@ export class UserSetting {
   private router = inject(Router);
 
   ngOnInit() {
-    this.userAgent = navigator.userAgent;
-  }
+    
+    const userSaved = localStorage.getItem('userLogged');
+    if (userSaved){
+      const userObject = JSON.parse(userSaved);
+      this.userAgent = userObject.username;
+    }
+      }
 
   logout() {
+    localStorage.removeItem('userLogged');
     this.router.navigate(['/login']);
   }
 }
