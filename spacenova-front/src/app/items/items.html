@@ -1,0 +1,99 @@
+<div class="search-asteroids">
+    <form>
+        <mat-form-field>
+            <mat-label>Asteroids</mat-label>
+            <input matInput type="text" placeholder="Search an asteroid" name="asteroid" [(ngModel)]="asteroidsFilter">
+        </mat-form-field>
+    </form>
+</div>
+<div class="filter-items">
+    <button matButton [matMenuTriggerFor]="menu">
+        Filter
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="setFilter('hazardous')">
+            Hazardous
+        </button>
+        <button mat-menu-item (click)="setFilter('')">
+            Clear filters
+        </button>
+    </mat-menu>
+</div>
+<div class="slider">
+    <p>
+        Aproach date
+    </p>
+    <mat-slider [max]="sliderMax" [min]="sliderMin" [step]="sliderStep">
+        <input matSliderThumb [(ngModel)]="value" #slider>
+    </mat-slider>
+</div>
+<section class="search-items">
+    @if(loading) {
+    <mat-spinner></mat-spinner>
+    }
+    @for (group of asteroidsArray | keyvalue; track group.key) {
+    @for (asteroid of group.value | itemsSearch: asteroidsFilter : selectedFilter : value; track asteroid.id) {
+    <div class="item-card">
+        <h2 class="card-title">
+            {{asteroid.name}}
+        </h2>
+        <div class="card-row">
+            <p class="card-label">
+                Diameter:
+            </p>
+            <p class="card-value">
+                {{asteroid.estimated_diameter?.meters?.estimated_diameter_min?.toFixed(2)}} mts -
+                {{asteroid.estimated_diameter?.meters?.estimated_diameter_max?.toFixed(2)}} mts
+            </p>
+        </div>
+
+        <div class="card-row">
+            <p class="card-label">
+                Threat level
+            </p>
+            @if (asteroid.is_potentially_hazardous_asteroid) {
+            <p class="hazard-level hazard-yes">
+                Potencially hazardous
+            </p>
+            } @else {
+            <p class="hazard-level hazard-no">
+                Non-hazardous
+            </p>
+            }
+        </div>
+
+        <div class="card-row">
+            <p class="card-label">
+                Aproach date:
+            </p>
+            <p class="card-value">
+                {{asteroid.close_approach_data?.[0]?.close_approach_date_full || 'No data'}}
+            </p>
+        </div>
+
+        <div class="card-row">
+            <p class="card-label">
+                Velocity:
+            </p>
+            <p class="card-value">
+                {{asteroid.close_approach_data?.[0]?.relative_velocity?.kilometers_per_hour}} km / h
+            </p>
+        </div>
+
+        <div class="card-row">
+            <p class="card-label">
+                Orbiting body:
+            </p>
+            <p class="card-value">
+                {{asteroid.close_approach_data?.[0]?.orbiting_body}}
+            </p>
+        </div>
+    </div>
+    } @empty {
+    <p class="empty-state">
+        No items
+    </p>
+    }
+    }
+
+</section>
