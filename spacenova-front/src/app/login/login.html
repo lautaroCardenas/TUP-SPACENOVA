@@ -18,18 +18,18 @@
                     <mat-label>Username</mat-label>
                     <input matInput name="username" placeholder="Username" type="text" [(ngModel)]="username">
                 </mat-form-field>
-                <mat-form-field class="login-pp">
+                <mat-form-field class="input-login">
                     <mat-label>Password</mat-label>
                     <input matInput name="password" placeholder="Password" type="password" [(ngModel)]="password">
                 </mat-form-field>
-
+                @if (isLoading) {
+                <mat-spinner></mat-spinner>
+                } @else {
                 <button matButton class="btn-login">
-                    @if (isLoading) {
-                        <mat-spinner></mat-spinner>
-                    } @else {
-                        Log in
-                    }
+                    Log in
                 </button>
+                }
+
             </form>
         </div>
     </div>

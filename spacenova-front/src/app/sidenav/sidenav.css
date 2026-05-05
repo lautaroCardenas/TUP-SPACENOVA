@@ -68,3 +68,26 @@
 .sidenav-item-link:active .item-link-icon {
   color: var(--text-color);
 }
+
+.navbar-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .sidenav-list {
+    display: none;
+  }
+  .sidenav-btn {
+    display: none;
+  }
+  .navbar-mobile {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+  }
+  .sidenav-item-link {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+}

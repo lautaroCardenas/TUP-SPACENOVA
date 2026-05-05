@@ -18,7 +18,7 @@
 .brand-title {
     font-family: var(--title-font), sans-serif;
     color: var(--text-color);
-    font-size: 4vw;
+    /* font-size: 4vw; */
     font-weight: 600;
     color: var(--text-color);
     letter-spacing: -0.02em;
@@ -28,8 +28,9 @@
 
 .brand-lema {
   font-family: var(--text-font), sans-serif;
-  font-size: 0.85vw;
+  /* font-size: 0.85vw; */
   color: var(--text-color);
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  text-align: center;
 }

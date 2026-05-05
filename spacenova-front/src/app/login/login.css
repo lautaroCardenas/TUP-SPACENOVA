@@ -45,6 +45,7 @@
 .login-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 2rem;
 }
 
@@ -53,6 +54,7 @@
 }
 
 .btn-login {
+    width: 20rem;
     margin-top: 1rem;
     background-color: var(--accent-color);
     color: var(--text-color) !important;
