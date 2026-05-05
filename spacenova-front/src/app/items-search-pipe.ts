@@ -15,13 +15,13 @@ export class ItemsSearchPipe implements PipeTransform {
 
     if (value) {
       result = result.filter(a => {
-        const velocity = a.close_approach_data[0].relative_velocity.kilometers_per_hour
+        const velocity = a.velocity
         return velocity ? Number(velocity) <= value : false
       })
     }
 
     if (filter === 'hazardous') {
-      result = result.filter(a => a.is_potentially_hazardous_asteroid)
+      result = result.filter(a => a.hazardous)
     }
 
     return result

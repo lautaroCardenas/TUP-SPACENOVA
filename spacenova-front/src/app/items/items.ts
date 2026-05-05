@@ -10,6 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { Sidenav } from '../sidenav/sidenav';
+import { IAsteroids } from '../interfaces';
 
 @Component({
   selector: 'app-items',
@@ -26,7 +27,7 @@ import { Sidenav } from '../sidenav/sidenav';
 export class Items {
   itemsService = inject(ItemsService)
   ASTEROIDS_KEY = 'asteroids'
-  asteroidsArray: any = []
+  asteroidsArray: IAsteroids[] = []
   loading: boolean = false
   asteroidsFilter: string = ''
   selectedFilter: string = ''
@@ -47,13 +48,11 @@ export class Items {
     }
 
     const res = await this.itemsService.getAsteroids()
-    // const date = Object.keys(res)[0]
     
     if (res) {
       localStorage.setItem(this.ASTEROIDS_KEY, JSON.stringify(res))
       this.asteroidsArray = res
-      // console.log(this.asteroidsArray)
-      // console.log(Array.isArray(this.asteroidsArray))
+      
       this.loading = false
     }
   }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
+import { IAsteroids } from './interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -22,10 +23,20 @@ export class ItemsService {
       try {
         const res = await lastValueFrom(this.http.get<any>(this.API_URL + this.API_KEY))
         const data = Object.values(res.near_earth_objects)
-        // const data = res.near_earth_objects
+
+        const mappedAsteroids:IAsteroids[] = data.flat().map((a:any) => ({
+          name: a.name,
+          minDiameter: a.estimated_diameter.meters?.estimated_diameter_min.toFixed(2),
+          maxDiameter: a.estimated_diameter.meters?.estimated_diameter_max.toFixed(2),
+          hazardous: a.is_potentially_hazardous_asteroid,
+          approachDate: a.close_approach_data[0].close_approach_date_full,
+          velocity: Number(a.close_approach_data[0].relative_velocity?.kilometers_per_hour),
+          orbitingBody: a.close_approach_data[0].orbiting_body
+        }))
         
-        localStorage.setItem(this.ASTEROIDS_KEY, JSON.stringify(data))
-        return data
+        localStorage.setItem(this.ASTEROIDS_KEY, JSON.stringify(mappedAsteroids))
+        return mappedAsteroids
+
       } catch (error) {
         console.log(error)
         return error
