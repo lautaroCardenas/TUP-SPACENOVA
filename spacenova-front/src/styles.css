@@ -11,16 +11,33 @@
   --text-font: 'Manrope';
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
+    font-family: var(--text-font);
 }
 
 body {
     font-size: 1vw;
     background-color: var(--primary-color);
     color: var(--text-color);
+}
+
+h1 {
+    font-size: clamp(1.9rem,  4.5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.6rem,   3.2vw, 2.8rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem,  2.2vw, 2rem);
+}
+
+p, a {
+    font-size: clamp(0.95rem,  1.1vw, 1.15rem);
 }
 
 @font-face {

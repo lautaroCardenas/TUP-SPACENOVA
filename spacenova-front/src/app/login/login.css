@@ -13,12 +13,33 @@
 
 .login-container {
     background-color: var(--secondary-color);
-    padding: 5rem 1.5rem;
+    padding: 2.5rem 1.5rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 2px -1px 20px -5px rgba(10, 10, 10, 0.5);
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-self: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.brand-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    margin-top: 0.5rem;
+}
+
+.login-title {
+    font-family: var(--title-font);
+    /* text-transform: uppercase; */
 }
 
 .login-form {
@@ -35,6 +56,8 @@
     margin-top: 1rem;
     background-color: var(--accent-color);
     color: var(--text-color) !important;
+    font-size: clamp(0.95rem,  1.1vw, 1.15rem);
+    box-shadow: 2px -1px 20px -5px rgba(10, 10, 10, 0.5);
 }
 
 .login-img img {
