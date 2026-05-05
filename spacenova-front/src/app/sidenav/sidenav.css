@@ -1,5 +1,5 @@
 .sidenav-conteiner {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: var(--primary-color);
   color: var(--text-color);
 }

@@ -15,8 +15,8 @@ export class ItemsSearchPipe implements PipeTransform {
 
     if (value) {
       result = result.filter(a => {
-        const date = a.close_approach_data?.[0]?.close_approach_date
-        return date ? new Date(date).getFullYear() === value : false
+        const velocity = a.close_approach_data[0].relative_velocity.kilometers_per_hour
+        return velocity ? Number(velocity) <= value : false
       })
     }
 

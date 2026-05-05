@@ -1,3 +1,34 @@
+.asteroids-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.search-asteroids .asteroids-search-field {
+    width: 35%;
+}
+
+.filter-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 3rem;
+}
+
+.filter-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color) !important;
+}
+
+.filter-btn-item:hover {
+    background-color: var(--accent-color) !important;
+    color: var(--text-color);
+}
+
 .search-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -13,7 +44,6 @@
     padding: 1.5rem;
     overflow: hidden;
     transition: all 0.2s;
-    /* clip-path: polygon(0 0, calc(100% - 1.2rem) 0, 100% 1.2rem, 100% 100%, 0 100%); */
 }
 
 .item-card:hover {
@@ -45,7 +75,6 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-color);
-    /* font-family: 'Share Tech Mono', monospace; */
 }
 
 .card-value {

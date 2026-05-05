@@ -9,6 +9,7 @@ import { ItemsSearchPipe } from '../items-search-pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
+import { Sidenav } from '../sidenav/sidenav';
 
 @Component({
   selector: 'app-items',
@@ -16,7 +17,7 @@ import { MatSliderModule } from '@angular/material/slider';
   imports: [
     CommonModule, ItemsSearchPipe, MatProgressSpinnerModule, 
     MatInputModule, MatFormFieldModule, FormsModule, MatMenuModule, 
-    MatButtonModule, MatSliderModule
+    MatButtonModule, MatSliderModule, Sidenav
   ],
   templateUrl: './items.html',
   styleUrl: './items.css',
@@ -30,8 +31,8 @@ export class Items {
   asteroidsFilter: string = ''
   selectedFilter: string = ''
   sliderMin = 2000
-  sliderMax = 2026
-  sliderStep = 5
+  sliderMax = 100000
+  sliderStep = 1000
   value = 0
 
   setFilter (filter:string) {
