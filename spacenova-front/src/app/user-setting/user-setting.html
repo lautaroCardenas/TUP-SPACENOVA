@@ -1,21 +1,30 @@
 <app-sidenav>
      <section class="settings-container">
-    
           <h2>
                User Settings
           </h2>
-
-          <div class="card porfile-card">
+          <div class="card profile-card">
                <mat-icon class="avatar">account_circle</mat-icon>
                <div class="profile-info">
+                    <h3>Name: Isidoro</h3>
+                    <p>Age: 25</p>
+                    <p>Location: Earth</p>
+                    <p>Email: user@example.com</p>
                </div>
-               <h3>{{ userAgent }}</h3>
           </div>
-
           <button mat-flat-button class="btn-logout" (click)="logout()">
                <mat-icon>logout</mat-icon>
                log out
           </button>
+     <section class="card info-card">
+          <h3>Spacenova Website</h3>
+          <p>
+               version: 1.0.0
+          </p>
+          <p class="ua-title">User Agent:</p>
+          <div class="user-agent-box">
+               {{ userAgent }}
+          </div>
      </section>
+ </section>
 </app-sidenav>
-

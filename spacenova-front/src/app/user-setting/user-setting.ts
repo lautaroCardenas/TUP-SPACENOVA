@@ -11,17 +11,12 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
   templateUrl: './user-setting.html',
   styleUrl: './user-setting.css',
 })
-export class UserSetting {
+export class UserSetting implements OnInit {
   userAgent: string = '';
   private router = inject(Router);
 
   ngOnInit() {
-    
-    const userSaved = localStorage.getItem('userLogged');
-    if (userSaved){
-      const userObject = JSON.parse(userSaved);
-      this.userAgent = userObject.username;
-    }
+      this.userAgent = navigator.userAgent; 
       }
 
   logout() {
