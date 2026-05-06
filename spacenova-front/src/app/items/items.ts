@@ -27,10 +27,11 @@ import { IAsteroids } from '../interfaces';
 export class Items {
   itemsService = inject(ItemsService)
   ASTEROIDS_KEY = 'asteroids'
-  asteroidsArray: IAsteroids[] = []
-  loading: boolean = false
+  asteroidsArray: IAsteroids[]= []
+  loading: boolean = true
   asteroidsFilter: string = ''
   selectedFilter: string = ''
+  errorLoadingApi: boolean = false
   sliderMin = 2000
   sliderMax = 100000
   sliderStep = 1000
@@ -40,20 +41,19 @@ export class Items {
     this.selectedFilter = filter
   }
 
-  async ngOnInit() {
-    // this.loading = true
-    const asteroids = localStorage.getItem(this.ASTEROIDS_KEY)
-    if (asteroids) {
-      this.asteroidsArray = JSON.parse(asteroids)
-    }
-
-    const res = await this.itemsService.getAsteroids()
-    
-    if (res) {
-      localStorage.setItem(this.ASTEROIDS_KEY, JSON.stringify(res))
+  async ngOnInit() {    
+    try {
+      const res = await this.itemsService.getAsteroids()
       this.asteroidsArray = res
-      
+      console.log(res)
+
+    } catch (error) {
+      this.errorLoadingApi = true
+
+    } finally {
       this.loading = false
+      console.log(this.loading)
     }
+    
   }
 }

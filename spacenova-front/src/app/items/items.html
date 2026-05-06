@@ -1,9 +1,15 @@
 <app-sidenav>
     <div class="search-asteroids">
+        <h1 class="search-asteroids-title">
+            Track <span class="title-highlight">asteroids</span> <br> near Earth
+        </h1>
+        <p class="search-asteroids-subtitle">
+            Discover asteroids near earth, their diameter, velocity and if they are dangerous.
+        </p>
         <form class="asteroids-form">
             <mat-form-field class="asteroids-search-field">
-                <mat-label>Asteroids</mat-label>
-                <input class="asteroids-search-input" matInput type="text" placeholder="Search an asteroid"
+                <mat-label>Search an asteroid by it´s name</mat-label>
+                <input class="asteroids-search-input" matInput type="text" placeholder="Ex: 2015 TX237"
                     name="asteroid" [(ngModel)]="asteroidsFilter">
             </mat-form-field>
         </form>
@@ -12,7 +18,7 @@
         <button class="filter-btn" matButton [matMenuTriggerFor]="menu">
             Filter
         </button>
-        <mat-menu class="filter-options" #menu="matMenu" >
+        <mat-menu class="filter-options" #menu="matMenu">
             <button mat-menu-item class="filter-btn-item" (click)="setFilter('hazardous')">
                 Hazardous
             </button>
@@ -21,20 +27,28 @@
             </button>
         </mat-menu>
         <div class="slider">
-            <p>
+            <p class="slider-title">
                 Velocity
             </p>
+            
             <mat-slider [max]="sliderMax" [min]="sliderMin" [step]="sliderStep">
                 <input matSliderThumb [(ngModel)]="value" #slider>
             </mat-slider>
+            <p class="slider-value">
+                {{value}} km / h
+            </p>
         </div>
     </div>
-
     <section class="search-items">
-        @if(loading) {
+        @if (loading) {
         <mat-spinner></mat-spinner>
-        }
-        
+        } @else if (!loading && errorLoadingApi) {
+        <div class="error-loading">
+            <h3>
+                No items to show
+            </h3>
+        </div>
+        } @else {
         @for (asteroid of asteroidsArray | itemsSearch: asteroidsFilter : selectedFilter : value; track asteroid.name) {
         <div class="item-card">
             <h2 class="card-title">
@@ -93,7 +107,6 @@
             </div>
         </div>
         }
-        
-
+        }
     </section>
 </app-sidenav>

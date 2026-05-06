@@ -1,9 +1,42 @@
+:host {
+    --background-color-filters: #6453ff36;
+}
+
+.search-asteroids {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 4rem;
+    /* padding: 2rem; */
+}
+
+.search-asteroids-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-align: center;
+    line-height: 1.1;
+    margin: 0 0 0.8rem;
+}
+
+.title-highlight {
+    color: var(--accent-color);
+}
+
+.search-asteroids-subtitle {
+    font-size: clamp(0.75rem, 2vw, 1.25rem);
+    text-align: center;
+    max-width: 35rem;
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+}
+
 .asteroids-form {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2.5rem;
+    /* margin-top: 2.5rem; */
 }
 
 .search-asteroids .asteroids-search-field {
@@ -20,12 +53,41 @@
 }
 
 .filter-btn {
-    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color-filters);
+    border: 1.5px solid var(--accent-color);
     color: var(--text-color) !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    padding: 0.75rem 1.5rem !important;
+    cursor: pointer;
 }
 
 .filter-btn-item:hover {
     background-color: var(--accent-color) !important;
+    color: var(--text-color);
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--background-color-filters);
+    border: 1.5px solid var(--accent-color);
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.slider-title {
+    letter-spacing: 0.1rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.slider-value {
+    /* font-weight: 600; */
+    letter-spacing: 0.1rem;
     color: var(--text-color);
 }
 
@@ -103,15 +165,15 @@
 }
 
 .hazard-no {
-  background: var(--primary-color);
-  border: 0.05rem solid var(--accent-color);
-  color: var(--text-color);
+    background: var(--primary-color);
+    border: 0.05rem solid var(--accent-color);
+    color: var(--text-color);
 }
 
 .empty-state {
-  color: var(--secondary-color);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-align: center;
-  padding: 3rem;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 3rem;
 }
