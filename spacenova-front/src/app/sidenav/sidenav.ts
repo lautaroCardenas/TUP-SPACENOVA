@@ -23,7 +23,7 @@ interface MenuItem {
 export class Sidenav {
   menuItems: MenuItem[] = [
     { icon: 'home', text: 'Home', route: '/home' },
-    { icon: 'apps', text: 'Items', route: '/' },
+    { icon: 'apps', text: 'Items', route: '/items' },
     { icon: 'settings', text: 'Settings', route: '/settings' }
   ];
 

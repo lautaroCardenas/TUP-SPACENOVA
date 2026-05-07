@@ -27,4 +27,16 @@
           </div>
      </section>
  </section>
+
+     <ng-template #logoutDialog>
+      <h2 mat-dialog-title class="dialog-title">Warning</h2>
+      <mat-dialog-content>
+           <p class="dialog-text">Are you sure you want to log out of Spacenova?</p>
+      </mat-dialog-content>
+      <mat-dialog-actions align="end">
+           <button mat-button mat-dialog-close class="btn-cancel">Cancel</button>
+           <button mat-flat-button class="btn-confirm-logout" (click)="confirmLogout()">Log out</button>
+      </mat-dialog-actions>
+ </ng-template>
+
 </app-sidenav>

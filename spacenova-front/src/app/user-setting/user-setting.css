@@ -84,3 +84,26 @@ h2 {
 .btn-logout mat-icon {
     margin-right: 0.5rem;
 }
+
+.dialog-title {
+    font-family: var(--title-font);
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.dialog-text {
+    font-family: var(--text-font);
+    color: #181818; 
+}
+
+.btn-cancel {
+    font-family: var(--title-font) !important;
+    color: #181818 !important; 
+}
+
+.btn-confirm-logout {
+    background-color: var(--button-alert-color) !important;
+    color: var(--text-color) !important;
+    font-family: var(--title-font) !important;
+    margin-left: 0.5rem !important;
+}
